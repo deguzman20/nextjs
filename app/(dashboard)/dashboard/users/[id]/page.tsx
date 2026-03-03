@@ -1,11 +1,11 @@
-import React from "react";
-
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function User({ params }: PageProps) {
-  return <div>{params.id}</div>;
+export default async function User({ params }: PageProps) {
+  const { id } = await params;
+
+  return <div>{id}</div>;
 }
