@@ -1,8 +1,11 @@
 import React from "react";
 
-function User({ params }: { params: { id: string } }) {
-  const { id } = params;
-  return <div>{id}</div>;
+interface PageProps {
+  params: {
+    id: string;
+  };
 }
 
-export default User;
+export default function User({ params }: PageProps) {
+  return <div>{params.id}</div>;
+}
